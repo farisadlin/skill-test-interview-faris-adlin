@@ -62,10 +62,9 @@ for (let line = 0; line < n; line++) {
 }
 
 const dividedArrEach = dividedArr.map((item, index) => ({
-  "Kelompok" : index + 1,
-  "Data" : item
-}))
-
+  "Kelompok": index + 1,
+  "Data": item,
+}));
 
 /* 2. Menampilkan nilai data secara terurut dari terbesar hingga terkecil */
 
@@ -78,7 +77,12 @@ const sortedArr = (input) => {
     });
   }
 
-  return sorted;
+  const newSorted = sorted.map((item, index) => ({
+    "Kelompok": index + 1,
+    "Data Terurut": item,
+  }));
+
+  return newSorted;
 };
 
 /* 3. Menjumlahkan total nilai setiap kelompok data */
@@ -94,7 +98,11 @@ const sumArr = (input) => {
     totalArr.push(sum);
   }
 
-  return totalArr;
+  const newTotalArr = totalArr.map((item, index) => ({
+    "Kelompok": index + 1,
+    "Total Data": item,
+  }));
+  return newTotalArr;
 };
 
 /* 4. Menghitung nilai rata-rata setiap kelompok data */
@@ -113,7 +121,12 @@ const meanArr = (input) => {
     meanTotalArr.push(mean);
   }
 
-  return meanTotalArr;
+  const newMeanTotalArr = meanTotalArr.map((item, index) => ({
+    "Kelompok": index + 1,
+    "Nilai Rerata": item,
+  }));
+
+  return newMeanTotalArr;
 };
 
 /* 5. Menghitung nilai tertinggi dan terendah untuk setiak kelompok data*/
@@ -129,7 +142,13 @@ const minMaxArr = (input) => {
     minMax.push([max, min]);
   }
 
-  return minMax;
+  const newMinMax = minMax.map((item, index) => ({
+    "Kelompok": index + 1,
+    "Nilai Terbesar": item[0],
+    "Nilai Terendah": item[1],
+  }));
+
+  return newMinMax;
 };
 
 console.log("!--- Array asli ---!");
